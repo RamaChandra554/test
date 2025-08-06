@@ -1,7 +1,7 @@
 /* Custom Properties */
 :root {
-    --primary-color: #FF6B35;
-    --secondary-color: #2C1810;
+    --primary-color: #ca753c;
+    --secondary-color: #20130e;
     --accent-color: #FFA726;
     --light-color: #F5F5F5;
     --dark-color: #1A1A1A;
@@ -24,7 +24,7 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,h2,h3,h4,h5,h6 {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
 }
@@ -109,8 +109,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Hero Section */
 .hero-section {
     min-height: 80vh;
-    background: linear-gradient(to right, #2c1810 60%, #FF6B35 40% ),
-                 center/cover;
+    background: linear-gradient(to right, #2c1810 60%, #FF6B35 40%),
+        center/cover;
     display: flex;
     align-items: center;
     position: relative;
@@ -128,12 +128,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-section .container {
+    padding-top: 80px;
     position: relative;
     z-index: 2;
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 3.rem;
     color: #ffffff;
     margin-bottom: 1.5rem;
     line-height: 1.2;
@@ -141,7 +142,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.rem;
     color: #E0E0E0;
     margin-bottom: 2.5rem;
     line-height: 1.6;
@@ -149,8 +150,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-buttons .btn {
     margin: 0.5rem 0.5rem 0.5rem 0;
-    padding: 12px 30px;
-    font-weight: 600;
+    padding: 6px 12px;
+    font-weight: 300;
     transition: var(--transition);
 }
 
@@ -217,7 +218,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color);
     padding: 10px 25px;
     margin: 0 0.5rem;
-    border-radius: 50px;
+    border-radius: 5px;
     font-weight: 600;
     transition: var(--transition);
     cursor: pointer;
@@ -269,7 +270,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .menu-description {
-    display: none;
     color: var(--text-light);
     font-size: 0.95rem;
     line-height: 1.6;
@@ -295,18 +295,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .special-image {
     height: 200px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     display: block;
     object-fit: cover;
-    transition: transform 0.6s ease-in-out;
-    transform-style: preserve-3d;
+    transition: transform 2s ease-in-out;
 }
 
 .special-image:hover {
     transform: rotate(360deg);
-    transition-duration: 20sec;
 }
+
+
 
 .special-content {
     padding: 0.5rem;
@@ -331,11 +330,21 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
 }
 
+.special-footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+    /* optional spacing */
+    margin-top: 1rem;
+}
+
+
 /* Booking Section */
 .booking-section {
     padding: 100px 0;
     background: linear-gradient(135deg, rgba(44, 24, 16, 0.9), rgba(26, 26, 26, 0.9)),
-                url('https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
+        url('https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg') center/cover;
     position: relative;
 }
 
@@ -343,7 +352,7 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 0%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
 }
@@ -351,7 +360,6 @@ h1, h2, h3, h4, h5, h6 {
 .booking-form-container {
     background: rgba(255, 255, 255, 0.95);
     padding: 3rem;
-    border-radius: 15px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     position: relative;
@@ -365,7 +373,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .form-control {
     border: 2px solid #E0E0E0;
-    border-radius: 10px;
     padding: 12px 15px;
     font-size: 1rem;
     transition: var(--transition);
@@ -382,7 +389,7 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--light-color);
 }
 
-.offer-card {
+.offer-cards {
     background: #ffffff;
     border-radius: 15px;
     overflow: hidden;
@@ -390,9 +397,10 @@ h1, h2, h3, h4, h5, h6 {
     transition: var(--transition);
     display: flex;
     align-items: center;
+    padding: 0px 10px ;
 }
 
-.offer-card:hover {
+.offer-cards:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
@@ -415,12 +423,12 @@ h1, h2, h3, h4, h5, h6 {
 .offer-title {
     font-size: 1.3rem;
     color: var(--dark-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
 }
 
 .offer-description {
     color: var(--text-light);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .offer-price {
@@ -445,6 +453,9 @@ h1, h2, h3, h4, h5, h6 {
 .testimonials-section {
     padding: 100px 0;
     background: #ffffff;
+    background: url(https://images.pexels.com/photos/2747591/pexels-photo-2747591.jpeg);
+    background-position: center;
+    background-size: cover; 
 }
 
 .testimonial-card {
@@ -506,12 +517,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.9rem;
 }
 
-/* Statistics Section */
-.stats-section {
-    padding: 80px 0;
-    background: var(--secondary-color);
-    color: #ffffff;
-}
+
 
 .stat-item {
     text-align: center;
@@ -519,7 +525,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .stat-number {
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
     font-family: 'Playfair Display', serif;
@@ -527,15 +533,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .stat-label {
     font-size: 1.1rem;
-    color: #E0E0E0;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 /* Newsletter Section */
 .newsletter-section {
+    color: #ffffff;
     padding: 80px 0;
-    background: var(--light-color);
+    background: var(--primary-color);
 }
 
 .newsletter-form {
@@ -544,7 +550,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .newsletter-form .input-group {
-    border-radius: 50px;
     overflow: hidden;
     box-shadow: var(--shadow);
 }
@@ -553,17 +558,14 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
     padding: 15px 20px;
     font-size: 1rem;
-    border-radius: 50px 0 0 50px;
 }
 
 .newsletter-form .btn {
-    border-radius: 0 50px 50px 0;
     padding: 15px 25px;
 }
 
 /* Footer */
 .footer-section {
-    background: var(--secondary-color);
     color: #ffffff;
     padding: 60px 0 20px;
 }
@@ -708,7 +710,7 @@ h1, h2, h3, h4, h5, h6 {
     .hero-title {
         font-size: 3rem;
     }
-    
+
     .section-title {
         font-size: 2.2rem;
     }
@@ -718,32 +720,32 @@ h1, h2, h3, h4, h5, h6 {
     .hero-title {
         font-size: 2.5rem;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1.1rem;
     }
-    
+
     .hero-buttons {
         text-align: center;
         margin-top: 2rem;
     }
-    
+
     .booking-form-container {
         padding: 2rem;
     }
-    
+
     .offer-card {
         flex-direction: column;
     }
-    
+
     .offer-image {
         flex: none;
     }
-    
+
     .offer-image img {
         height: 200px;
     }
@@ -754,49 +756,57 @@ h1, h2, h3, h4, h5, h6 {
         padding: 60px 0;
         text-align: center;
     }
-    
+
     .hero-title {
         font-size: 2.2rem;
         margin-bottom: 1rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1rem;
         margin-bottom: 2rem;
     }
-    
+
+    .menu-description {
+        display: block;
+        color: var(--text-light);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
     .section-title {
         font-size: 1.8rem;
     }
-    
+
     .booking-form-container {
         padding: 1.5rem;
         margin: 0 1rem;
     }
-    
+
     .testimonial-author {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .author-info {
         text-align: center;
         margin-top: 0.5rem;
     }
-    
+
     .stat-number {
         font-size: 2.5rem;
     }
-    
+
     .footer-section {
         text-align: center;
     }
-    
+
     .hours-item {
         justify-content: center;
         gap: 1rem;
     }
-    
+
     .social-links {
         justify-content: center;
     }
@@ -806,44 +816,57 @@ h1, h2, h3, h4, h5, h6 {
     .hero-title {
         font-size: 1.8rem;
     }
-    
+
     .hero-buttons .btn {
         display: block;
         margin: 0.5rem 0;
         width: 80%;
     }
-    
+
     .section-title {
         font-size: 1.6rem;
     }
-    
+
     .menu-filter {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 0.5rem;
     }
-    
+
     .filter-btn {
         margin: 0.25rem;
         padding: 8px 20px;
         font-size: 0.9rem;
     }
-    
+
+    .menu-name {
+        font-size: 1rem;
+    }
+
+    .menu-description {
+        display: none;
+        font-size: 0.85rem;
+    }
+
+    .menu-price {
+        font-size: 1.1rem;
+    }
+
     .newsletter-form .input-group {
         flex-direction: column;
         border-radius: 10px;
     }
-    
+
     .newsletter-form .form-control {
         border-radius: 10px;
         margin-bottom: 1rem;
     }
-    
+
     .newsletter-form .btn {
         border-radius: 10px;
     }
-    
+
     .back-to-top {
         bottom: 20px;
         right: 20px;
@@ -858,6 +881,7 @@ h1, h2, h3, h4, h5, h6 {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
