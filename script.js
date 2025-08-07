@@ -55,7 +55,6 @@ function animateCounters() {
         }
     });
 }
-
 // Trigger counter animation when section is in view
 const statsSection = document.querySelector('.stats-section');
 let statsAnimated = false;
@@ -102,13 +101,13 @@ const newsletterForm = document.querySelector('.newsletter-form');
 if (bookingForm) {
     bookingForm.addEventListener('submit', function(e) {
         e.preventDefault();
-
+        
         const formData = new FormData(this);
-
+        
         alert('Thank you for your reservation! We will contact you soon to confirm your booking.');
-
+        
         this.reset();
-
+        
         console.log('Booking form submitted:', Object.fromEntries(formData));
     });
 }
@@ -116,13 +115,13 @@ if (bookingForm) {
 if (newsletterForm) {
     newsletterForm.addEventListener('submit', function(e) {
         e.preventDefault();
-
+        
         const email = this.querySelector('input[type="email"]').value;
-
+        
         alert('Thank you for subscribing to our newsletter!');
-
+        
         this.reset();
-
+        
         console.log('Newsletter subscription:', email);
     });
 }
@@ -144,7 +143,7 @@ navLinks.forEach(link => {
 window.addEventListener('scroll', function() {
     const scrolled = window.pageYOffset;
     const heroSection = document.querySelector('.hero-section');
-
+    
     if (heroSection) {
         const rate = scrolled * -0.5;
         heroSection.style.transform = `translateY(${rate}px)`;
@@ -173,11 +172,11 @@ const buttons = document.querySelectorAll('.btn');
 buttons.forEach(button => {
     button.addEventListener('click', function() {
         const originalText = this.innerHTML;
-
+        
         if (this.type === 'submit') {
             this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
             this.disabled = true;
-
+            
             setTimeout(() => {
                 this.innerHTML = originalText;
                 this.disabled = false;
@@ -193,7 +192,7 @@ cards.forEach(card => {
     card.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-10px) scale(1.02)';
     });
-
+    
     card.addEventListener('mouseleave', function() {
         this.style.transform = 'translateY(0) scale(1)';
     });
@@ -214,15 +213,16 @@ window.addEventListener('load', function() {
 function updateRestaurantStatus() {
     const now = new Date();
     const currentHour = now.getHours();
-    const currentDay = now.getDay(); 
+    const currentDay = now.getDay();
+    
     let isOpen = false;
-
+    
     if (currentDay >= 1 && currentDay <= 5) { 
         isOpen = currentHour >= 11 && currentHour < 22; 
     } else { 
-        isOpen = currentHour >= 10 && currentHour < 23; 
+        isOpen = currentHour >= 10 && currentHour < 23;
     }
-
+    
     const statusElement = document.querySelector('.restaurant-status');
     if (statusElement) {
         statusElement.textContent = isOpen ? 'Open Now' : 'Closed';
@@ -274,7 +274,7 @@ document.querySelectorAll('.menu-card, .special-card, .testimonial-card').forEac
     observer.observe(el);
 });
 
-// Touch gestures for mobile menu navigation (optional console logs)
+// Touch gestures for mobile menu navigation
 let touchStartX = 0;
 let touchEndX = 0;
 
@@ -290,7 +290,7 @@ document.addEventListener('touchend', e => {
 function handleGesture() {
     const swipeThreshold = 100;
     const swipeDistance = touchEndX - touchStartX;
-
+    
     if (Math.abs(swipeDistance) > swipeThreshold) {
         if (swipeDistance > 0) {
             console.log('Swipe right detected');
@@ -300,13 +300,13 @@ function handleGesture() {
     }
 }
 
-// Performance throttling utility
+// Add performance optimization
 const throttle = (func, delay) => {
     let timeoutId;
     let lastExecTime = 0;
     return function (...args) {
         const currentTime = Date.now();
-
+        
         if (currentTime - lastExecTime > delay) {
             func.apply(this, args);
             lastExecTime = currentTime;
@@ -320,7 +320,7 @@ const throttle = (func, delay) => {
     };
 };
 
-// Throttled scroll events (navbar + back to top)
+// Apply throttling to scroll events
 window.addEventListener('scroll', throttle(function() {
     const navbar = document.getElementById('mainNavbar');
     if (window.scrollY > 50) {
@@ -328,7 +328,7 @@ window.addEventListener('scroll', throttle(function() {
     } else {
         navbar.classList.remove('scrolled');
     }
-
+    
     if (window.scrollY > 300) {
         backToTopButton.classList.add('show');
     } else {
